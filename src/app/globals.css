@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #0b1220;
+  --navy-hover: #151d2e;
+  --accent: #d4a017;
+  --accent-hover: #c49210;
+  --accent-soft: #f8efd6;
+  --workspace: #f6f5f2;
+  --foreground: #141a24;
+  --muted: #94a0b4;
+  --muted-foreground: #5c6b82;
+  --border: #e6e8ee;
+  --border-strong: #cfd5e0;
+  --surface-muted: #eef0f4;
+  --success: #1f7a4d;
+  --danger: #c0352b;
+  --background: var(--workspace);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--workspace);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 35%, white);
+}
+
+/* Dense operational tables */
+.crm-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.crm-table th {
+  background: #fafaf8;
+  color: var(--muted-foreground);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.crm-table td {
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.crm-table tbody tr {
+  transition: background-color 120ms ease;
+}
+
+.crm-table tbody tr:hover {
+  background: #fafaf8;
+}
+
+.crm-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.crm-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+}
